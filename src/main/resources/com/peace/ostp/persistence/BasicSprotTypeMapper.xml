@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peace.ostp.persistence.BasicSprotTypeMapper" >
+  <resultMap id="BaseResultMap" type="com.peace.ostp.domain.BasicSprotType" >
+    <id column="SportTypeID" property="sporttypeid" jdbcType="CHAR" />
+    <result column="SportTypeName" property="sporttypename" jdbcType="VARCHAR" />
+    <result column="Note" property="note" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    SportTypeID, SportTypeName, Note
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from basicsprottype
+    where SportTypeID = #{sporttypeid,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from basicsprottype
+    where SportTypeID = #{sporttypeid,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.peace.ostp.domain.BasicSprotType" >
+    insert into basicsprottype (SportTypeID, SportTypeName, Note
+      )
+    values (#{sporttypeid,jdbcType=CHAR}, #{sporttypename,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.peace.ostp.domain.BasicSprotType" >
+    insert into basicsprottype
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sporttypeid != null" >
+        SportTypeID,
+      </if>
+      <if test="sporttypename != null" >
+        SportTypeName,
+      </if>
+      <if test="note != null" >
+        Note,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sporttypeid != null" >
+        #{sporttypeid,jdbcType=CHAR},
+      </if>
+      <if test="sporttypename != null" >
+        #{sporttypename,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null" >
+        #{note,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.peace.ostp.domain.BasicSprotType" >
+    update basicsprottype
+    <set >
+      <if test="sporttypename != null" >
+        SportTypeName = #{sporttypename,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null" >
+        Note = #{note,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where SportTypeID = #{sporttypeid,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.peace.ostp.domain.BasicSprotType" >
+    update basicsprottype
+    set SportTypeName = #{sporttypename,jdbcType=VARCHAR},
+      Note = #{note,jdbcType=VARCHAR}
+    where SportTypeID = #{sporttypeid,jdbcType=CHAR}
+  </update>
+</mapper>

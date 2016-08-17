@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peace.ostp.persistence.CourseInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.peace.ostp.domain.CourseInfo" >
+    <id column="CourseID" property="courseid" jdbcType="CHAR" />
+    <result column="CourseTitle" property="coursetitle" jdbcType="VARCHAR" />
+    <result column="CourseAuthor" property="courseauthor" jdbcType="VARCHAR" />
+    <result column="UpdateTime" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="Content" property="content" jdbcType="VARCHAR" />
+    <result column="CourseTypeID" property="coursetypeid" jdbcType="CHAR" />
+    <result column="SportTypeID" property="sporttypeid" jdbcType="CHAR" />
+    <result column="ClickTimes" property="clicktimes" jdbcType="CHAR" />
+    <result column="Keywords" property="keywords" jdbcType="VARCHAR" />
+    <result column="Enabled" property="enabled" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    CourseID, CourseTitle, CourseAuthor, UpdateTime, Content, CourseTypeID, SportTypeID, 
+    ClickTimes, Keywords, Enabled
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from courseinfo
+    where CourseID = #{courseid,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from courseinfo
+    where CourseID = #{courseid,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.peace.ostp.domain.CourseInfo" >
+    insert into courseinfo (CourseID, CourseTitle, CourseAuthor, 
+      UpdateTime, Content, CourseTypeID, 
+      SportTypeID, ClickTimes, Keywords, 
+      Enabled)
+    values (#{courseid,jdbcType=CHAR}, #{coursetitle,jdbcType=VARCHAR}, #{courseauthor,jdbcType=VARCHAR}, 
+      #{updatetime,jdbcType=TIMESTAMP}, #{content,jdbcType=VARCHAR}, #{coursetypeid,jdbcType=CHAR}, 
+      #{sporttypeid,jdbcType=CHAR}, #{clicktimes,jdbcType=CHAR}, #{keywords,jdbcType=VARCHAR}, 
+      #{enabled,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.peace.ostp.domain.CourseInfo" >
+    insert into courseinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="courseid != null" >
+        CourseID,
+      </if>
+      <if test="coursetitle != null" >
+        CourseTitle,
+      </if>
+      <if test="courseauthor != null" >
+        CourseAuthor,
+      </if>
+      <if test="updatetime != null" >
+        UpdateTime,
+      </if>
+      <if test="content != null" >
+        Content,
+      </if>
+      <if test="coursetypeid != null" >
+        CourseTypeID,
+      </if>
+      <if test="sporttypeid != null" >
+        SportTypeID,
+      </if>
+      <if test="clicktimes != null" >
+        ClickTimes,
+      </if>
+      <if test="keywords != null" >
+        Keywords,
+      </if>
+      <if test="enabled != null" >
+        Enabled,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="courseid != null" >
+        #{courseid,jdbcType=CHAR},
+      </if>
+      <if test="coursetitle != null" >
+        #{coursetitle,jdbcType=VARCHAR},
+      </if>
+      <if test="courseauthor != null" >
+        #{courseauthor,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="coursetypeid != null" >
+        #{coursetypeid,jdbcType=CHAR},
+      </if>
+      <if test="sporttypeid != null" >
+        #{sporttypeid,jdbcType=CHAR},
+      </if>
+      <if test="clicktimes != null" >
+        #{clicktimes,jdbcType=CHAR},
+      </if>
+      <if test="keywords != null" >
+        #{keywords,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null" >
+        #{enabled,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.peace.ostp.domain.CourseInfo" >
+    update courseinfo
+    <set >
+      <if test="coursetitle != null" >
+        CourseTitle = #{coursetitle,jdbcType=VARCHAR},
+      </if>
+      <if test="courseauthor != null" >
+        CourseAuthor = #{courseauthor,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetime != null" >
+        UpdateTime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="content != null" >
+        Content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="coursetypeid != null" >
+        CourseTypeID = #{coursetypeid,jdbcType=CHAR},
+      </if>
+      <if test="sporttypeid != null" >
+        SportTypeID = #{sporttypeid,jdbcType=CHAR},
+      </if>
+      <if test="clicktimes != null" >
+        ClickTimes = #{clicktimes,jdbcType=CHAR},
+      </if>
+      <if test="keywords != null" >
+        Keywords = #{keywords,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null" >
+        Enabled = #{enabled,jdbcType=CHAR},
+      </if>
+    </set>
+    where CourseID = #{courseid,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.peace.ostp.domain.CourseInfo" >
+    update courseinfo
+    set CourseTitle = #{coursetitle,jdbcType=VARCHAR},
+      CourseAuthor = #{courseauthor,jdbcType=VARCHAR},
+      UpdateTime = #{updatetime,jdbcType=TIMESTAMP},
+      Content = #{content,jdbcType=VARCHAR},
+      CourseTypeID = #{coursetypeid,jdbcType=CHAR},
+      SportTypeID = #{sporttypeid,jdbcType=CHAR},
+      ClickTimes = #{clicktimes,jdbcType=CHAR},
+      Keywords = #{keywords,jdbcType=VARCHAR},
+      Enabled = #{enabled,jdbcType=CHAR}
+    where CourseID = #{courseid,jdbcType=CHAR}
+  </update>
+</mapper>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peace.ostp.persistence.BasicPhotoStyleMapper" >
+  <resultMap id="BaseResultMap" type="com.peace.ostp.domain.BasicPhotoStyle" >
+    <id column="PhotoStyleID" property="photostyleid" jdbcType="CHAR" />
+    <result column="PhotoStyleName" property="photostylename" jdbcType="VARCHAR" />
+    <result column="Note" property="note" jdbcType="VARCHAR" />
+    <result column="Enabled" property="enabled" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PhotoStyleID, PhotoStyleName, Note, Enabled
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from basicphotostyle
+    where PhotoStyleID = #{photostyleid,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from basicphotostyle
+    where PhotoStyleID = #{photostyleid,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.peace.ostp.domain.BasicPhotoStyle" >
+    insert into basicphotostyle (PhotoStyleID, PhotoStyleName, Note, 
+      Enabled)
+    values (#{photostyleid,jdbcType=CHAR}, #{photostylename,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR}, 
+      #{enabled,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.peace.ostp.domain.BasicPhotoStyle" >
+    insert into basicphotostyle
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="photostyleid != null" >
+        PhotoStyleID,
+      </if>
+      <if test="photostylename != null" >
+        PhotoStyleName,
+      </if>
+      <if test="note != null" >
+        Note,
+      </if>
+      <if test="enabled != null" >
+        Enabled,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="photostyleid != null" >
+        #{photostyleid,jdbcType=CHAR},
+      </if>
+      <if test="photostylename != null" >
+        #{photostylename,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null" >
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null" >
+        #{enabled,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.peace.ostp.domain.BasicPhotoStyle" >
+    update basicphotostyle
+    <set >
+      <if test="photostylename != null" >
+        PhotoStyleName = #{photostylename,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null" >
+        Note = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null" >
+        Enabled = #{enabled,jdbcType=CHAR},
+      </if>
+    </set>
+    where PhotoStyleID = #{photostyleid,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.peace.ostp.domain.BasicPhotoStyle" >
+    update basicphotostyle
+    set PhotoStyleName = #{photostylename,jdbcType=VARCHAR},
+      Note = #{note,jdbcType=VARCHAR},
+      Enabled = #{enabled,jdbcType=CHAR}
+    where PhotoStyleID = #{photostyleid,jdbcType=CHAR}
+  </update>
+</mapper>

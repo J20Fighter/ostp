@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peace.ostp.persistence.PositionDetailInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.peace.ostp.domain.PositionDetailInfo" >
+    <id column="PositionID" property="positionid" jdbcType="CHAR" />
+    <result column="PositionTypeID" property="positiontypeid" jdbcType="CHAR" />
+    <result column="SportTypeID" property="sporttypeid" jdbcType="CHAR" />
+    <result column="PositionName" property="positionname" jdbcType="VARCHAR" />
+    <result column="PositionCoordinate" property="positioncoordinate" jdbcType="VARCHAR" />
+    <result column="PositionPicture" property="positionpicture" jdbcType="VARCHAR" />
+    <result column="PositionDescribe" property="positiondescribe" jdbcType="VARCHAR" />
+    <result column="PositionTime" property="positiontime" jdbcType="VARCHAR" />
+    <result column="Enabled" property="enabled" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PositionID, PositionTypeID, SportTypeID, PositionName, PositionCoordinate, PositionPicture, 
+    PositionDescribe, PositionTime, Enabled
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from positiondetailinfo
+    where PositionID = #{positionid,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from positiondetailinfo
+    where PositionID = #{positionid,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.peace.ostp.domain.PositionDetailInfo" >
+    insert into positiondetailinfo (PositionID, PositionTypeID, SportTypeID, 
+      PositionName, PositionCoordinate, PositionPicture, 
+      PositionDescribe, PositionTime, Enabled
+      )
+    values (#{positionid,jdbcType=CHAR}, #{positiontypeid,jdbcType=CHAR}, #{sporttypeid,jdbcType=CHAR}, 
+      #{positionname,jdbcType=VARCHAR}, #{positioncoordinate,jdbcType=VARCHAR}, #{positionpicture,jdbcType=VARCHAR}, 
+      #{positiondescribe,jdbcType=VARCHAR}, #{positiontime,jdbcType=VARCHAR}, #{enabled,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.peace.ostp.domain.PositionDetailInfo" >
+    insert into positiondetailinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="positionid != null" >
+        PositionID,
+      </if>
+      <if test="positiontypeid != null" >
+        PositionTypeID,
+      </if>
+      <if test="sporttypeid != null" >
+        SportTypeID,
+      </if>
+      <if test="positionname != null" >
+        PositionName,
+      </if>
+      <if test="positioncoordinate != null" >
+        PositionCoordinate,
+      </if>
+      <if test="positionpicture != null" >
+        PositionPicture,
+      </if>
+      <if test="positiondescribe != null" >
+        PositionDescribe,
+      </if>
+      <if test="positiontime != null" >
+        PositionTime,
+      </if>
+      <if test="enabled != null" >
+        Enabled,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="positionid != null" >
+        #{positionid,jdbcType=CHAR},
+      </if>
+      <if test="positiontypeid != null" >
+        #{positiontypeid,jdbcType=CHAR},
+      </if>
+      <if test="sporttypeid != null" >
+        #{sporttypeid,jdbcType=CHAR},
+      </if>
+      <if test="positionname != null" >
+        #{positionname,jdbcType=VARCHAR},
+      </if>
+      <if test="positioncoordinate != null" >
+        #{positioncoordinate,jdbcType=VARCHAR},
+      </if>
+      <if test="positionpicture != null" >
+        #{positionpicture,jdbcType=VARCHAR},
+      </if>
+      <if test="positiondescribe != null" >
+        #{positiondescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="positiontime != null" >
+        #{positiontime,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null" >
+        #{enabled,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.peace.ostp.domain.PositionDetailInfo" >
+    update positiondetailinfo
+    <set >
+      <if test="positiontypeid != null" >
+        PositionTypeID = #{positiontypeid,jdbcType=CHAR},
+      </if>
+      <if test="sporttypeid != null" >
+        SportTypeID = #{sporttypeid,jdbcType=CHAR},
+      </if>
+      <if test="positionname != null" >
+        PositionName = #{positionname,jdbcType=VARCHAR},
+      </if>
+      <if test="positioncoordinate != null" >
+        PositionCoordinate = #{positioncoordinate,jdbcType=VARCHAR},
+      </if>
+      <if test="positionpicture != null" >
+        PositionPicture = #{positionpicture,jdbcType=VARCHAR},
+      </if>
+      <if test="positiondescribe != null" >
+        PositionDescribe = #{positiondescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="positiontime != null" >
+        PositionTime = #{positiontime,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null" >
+        Enabled = #{enabled,jdbcType=CHAR},
+      </if>
+    </set>
+    where PositionID = #{positionid,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.peace.ostp.domain.PositionDetailInfo" >
+    update positiondetailinfo
+    set PositionTypeID = #{positiontypeid,jdbcType=CHAR},
+      SportTypeID = #{sporttypeid,jdbcType=CHAR},
+      PositionName = #{positionname,jdbcType=VARCHAR},
+      PositionCoordinate = #{positioncoordinate,jdbcType=VARCHAR},
+      PositionPicture = #{positionpicture,jdbcType=VARCHAR},
+      PositionDescribe = #{positiondescribe,jdbcType=VARCHAR},
+      PositionTime = #{positiontime,jdbcType=VARCHAR},
+      Enabled = #{enabled,jdbcType=CHAR}
+    where PositionID = #{positionid,jdbcType=CHAR}
+  </update>
+</mapper>

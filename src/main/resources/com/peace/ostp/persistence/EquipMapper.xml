@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peace.ostp.persistence.EquipMapper" >
+  <resultMap id="BaseResultMap" type="com.peace.ostp.domain.Equip" >
+    <id column="EquipID" property="equipid" jdbcType="CHAR" />
+    <result column="EquipName" property="equipname" jdbcType="VARCHAR" />
+    <result column="EquipPrice" property="equipprice" jdbcType="VARCHAR" />
+    <result column="EquipParam" property="equipparam" jdbcType="VARCHAR" />
+    <result column="EquipRecommend" property="equiprecommend" jdbcType="BIT" />
+    <result column="SportTypeID" property="sporttypeid" jdbcType="CHAR" />
+    <result column="EquipTypeID" property="equiptypeid" jdbcType="CHAR" />
+    <result column="Note" property="note" jdbcType="VARCHAR" />
+    <result column="Enabled" property="enabled" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    EquipID, EquipName, EquipPrice, EquipParam, EquipRecommend, SportTypeID, EquipTypeID, 
+    Note, Enabled
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from equip
+    where EquipID = #{equipid,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from equip
+    where EquipID = #{equipid,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.peace.ostp.domain.Equip" >
+    insert into equip (EquipID, EquipName, EquipPrice, 
+      EquipParam, EquipRecommend, SportTypeID, 
+      EquipTypeID, Note, Enabled
+      )
+    values (#{equipid,jdbcType=CHAR}, #{equipname,jdbcType=VARCHAR}, #{equipprice,jdbcType=VARCHAR}, 
+      #{equipparam,jdbcType=VARCHAR}, #{equiprecommend,jdbcType=BIT}, #{sporttypeid,jdbcType=CHAR}, 
+      #{equiptypeid,jdbcType=CHAR}, #{note,jdbcType=VARCHAR}, #{enabled,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.peace.ostp.domain.Equip" >
+    insert into equip
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="equipid != null" >
+        EquipID,
+      </if>
+      <if test="equipname != null" >
+        EquipName,
+      </if>
+      <if test="equipprice != null" >
+        EquipPrice,
+      </if>
+      <if test="equipparam != null" >
+        EquipParam,
+      </if>
+      <if test="equiprecommend != null" >
+        EquipRecommend,
+      </if>
+      <if test="sporttypeid != null" >
+        SportTypeID,
+      </if>
+      <if test="equiptypeid != null" >
+        EquipTypeID,
+      </if>
+      <if test="note != null" >
+        Note,
+      </if>
+      <if test="enabled != null" >
+        Enabled,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="equipid != null" >
+        #{equipid,jdbcType=CHAR},
+      </if>
+      <if test="equipname != null" >
+        #{equipname,jdbcType=VARCHAR},
+      </if>
+      <if test="equipprice != null" >
+        #{equipprice,jdbcType=VARCHAR},
+      </if>
+      <if test="equipparam != null" >
+        #{equipparam,jdbcType=VARCHAR},
+      </if>
+      <if test="equiprecommend != null" >
+        #{equiprecommend,jdbcType=BIT},
+      </if>
+      <if test="sporttypeid != null" >
+        #{sporttypeid,jdbcType=CHAR},
+      </if>
+      <if test="equiptypeid != null" >
+        #{equiptypeid,jdbcType=CHAR},
+      </if>
+      <if test="note != null" >
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null" >
+        #{enabled,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.peace.ostp.domain.Equip" >
+    update equip
+    <set >
+      <if test="equipname != null" >
+        EquipName = #{equipname,jdbcType=VARCHAR},
+      </if>
+      <if test="equipprice != null" >
+        EquipPrice = #{equipprice,jdbcType=VARCHAR},
+      </if>
+      <if test="equipparam != null" >
+        EquipParam = #{equipparam,jdbcType=VARCHAR},
+      </if>
+      <if test="equiprecommend != null" >
+        EquipRecommend = #{equiprecommend,jdbcType=BIT},
+      </if>
+      <if test="sporttypeid != null" >
+        SportTypeID = #{sporttypeid,jdbcType=CHAR},
+      </if>
+      <if test="equiptypeid != null" >
+        EquipTypeID = #{equiptypeid,jdbcType=CHAR},
+      </if>
+      <if test="note != null" >
+        Note = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null" >
+        Enabled = #{enabled,jdbcType=CHAR},
+      </if>
+    </set>
+    where EquipID = #{equipid,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.peace.ostp.domain.Equip" >
+    update equip
+    set EquipName = #{equipname,jdbcType=VARCHAR},
+      EquipPrice = #{equipprice,jdbcType=VARCHAR},
+      EquipParam = #{equipparam,jdbcType=VARCHAR},
+      EquipRecommend = #{equiprecommend,jdbcType=BIT},
+      SportTypeID = #{sporttypeid,jdbcType=CHAR},
+      EquipTypeID = #{equiptypeid,jdbcType=CHAR},
+      Note = #{note,jdbcType=VARCHAR},
+      Enabled = #{enabled,jdbcType=CHAR}
+    where EquipID = #{equipid,jdbcType=CHAR}
+  </update>
+</mapper>

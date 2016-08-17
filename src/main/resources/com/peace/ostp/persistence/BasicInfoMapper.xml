@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peace.ostp.persistence.BasicInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.peace.ostp.domain.BasicInfo" >
+    <id column="Info ID" property="infoId" jdbcType="CHAR" />
+    <result column="Author" property="author" jdbcType="VARCHAR" />
+    <result column="Title" property="title" jdbcType="VARCHAR" />
+    <result column="FirstLevelInfoTypeID" property="firstlevelinfotypeid" jdbcType="CHAR" />
+    <result column="SecondLevelInfoTypeID" property="secondlevelinfotypeid" jdbcType="CHAR" />
+    <result column="SportTypeID" property="sporttypeid" jdbcType="CHAR" />
+    <result column="CopyFrom" property="copyfrom" jdbcType="VARCHAR" />
+    <result column="KeyWords" property="keywords" jdbcType="VARCHAR" />
+    <result column="Content" property="content" jdbcType="VARCHAR" />
+    <result column="ImgUrl" property="imgurl" jdbcType="VARCHAR" />
+    <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="Enabled" property="enabled" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    "Info ID", Author, Title, FirstLevelInfoTypeID, SecondLevelInfoTypeID, SportTypeID, 
+    CopyFrom, KeyWords, Content, ImgUrl, CreateTime, Enabled
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from basicinfo
+    where "Info ID" = #{infoId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from basicinfo
+    where "Info ID" = #{infoId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.peace.ostp.domain.BasicInfo" >
+    insert into basicinfo ("Info ID", Author, Title, 
+      FirstLevelInfoTypeID, SecondLevelInfoTypeID, 
+      SportTypeID, CopyFrom, KeyWords, 
+      Content, ImgUrl, CreateTime, 
+      Enabled)
+    values (#{infoId,jdbcType=CHAR}, #{author,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{firstlevelinfotypeid,jdbcType=CHAR}, #{secondlevelinfotypeid,jdbcType=CHAR}, 
+      #{sporttypeid,jdbcType=CHAR}, #{copyfrom,jdbcType=VARCHAR}, #{keywords,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR}, #{imgurl,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{enabled,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.peace.ostp.domain.BasicInfo" >
+    insert into basicinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="infoId != null" >
+        "Info ID",
+      </if>
+      <if test="author != null" >
+        Author,
+      </if>
+      <if test="title != null" >
+        Title,
+      </if>
+      <if test="firstlevelinfotypeid != null" >
+        FirstLevelInfoTypeID,
+      </if>
+      <if test="secondlevelinfotypeid != null" >
+        SecondLevelInfoTypeID,
+      </if>
+      <if test="sporttypeid != null" >
+        SportTypeID,
+      </if>
+      <if test="copyfrom != null" >
+        CopyFrom,
+      </if>
+      <if test="keywords != null" >
+        KeyWords,
+      </if>
+      <if test="content != null" >
+        Content,
+      </if>
+      <if test="imgurl != null" >
+        ImgUrl,
+      </if>
+      <if test="createtime != null" >
+        CreateTime,
+      </if>
+      <if test="enabled != null" >
+        Enabled,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="infoId != null" >
+        #{infoId,jdbcType=CHAR},
+      </if>
+      <if test="author != null" >
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="firstlevelinfotypeid != null" >
+        #{firstlevelinfotypeid,jdbcType=CHAR},
+      </if>
+      <if test="secondlevelinfotypeid != null" >
+        #{secondlevelinfotypeid,jdbcType=CHAR},
+      </if>
+      <if test="sporttypeid != null" >
+        #{sporttypeid,jdbcType=CHAR},
+      </if>
+      <if test="copyfrom != null" >
+        #{copyfrom,jdbcType=VARCHAR},
+      </if>
+      <if test="keywords != null" >
+        #{keywords,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="imgurl != null" >
+        #{imgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="enabled != null" >
+        #{enabled,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.peace.ostp.domain.BasicInfo" >
+    update basicinfo
+    <set >
+      <if test="author != null" >
+        Author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        Title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="firstlevelinfotypeid != null" >
+        FirstLevelInfoTypeID = #{firstlevelinfotypeid,jdbcType=CHAR},
+      </if>
+      <if test="secondlevelinfotypeid != null" >
+        SecondLevelInfoTypeID = #{secondlevelinfotypeid,jdbcType=CHAR},
+      </if>
+      <if test="sporttypeid != null" >
+        SportTypeID = #{sporttypeid,jdbcType=CHAR},
+      </if>
+      <if test="copyfrom != null" >
+        CopyFrom = #{copyfrom,jdbcType=VARCHAR},
+      </if>
+      <if test="keywords != null" >
+        KeyWords = #{keywords,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        Content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="imgurl != null" >
+        ImgUrl = #{imgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        CreateTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="enabled != null" >
+        Enabled = #{enabled,jdbcType=CHAR},
+      </if>
+    </set>
+    where "Info ID" = #{infoId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.peace.ostp.domain.BasicInfo" >
+    update basicinfo
+    set Author = #{author,jdbcType=VARCHAR},
+      Title = #{title,jdbcType=VARCHAR},
+      FirstLevelInfoTypeID = #{firstlevelinfotypeid,jdbcType=CHAR},
+      SecondLevelInfoTypeID = #{secondlevelinfotypeid,jdbcType=CHAR},
+      SportTypeID = #{sporttypeid,jdbcType=CHAR},
+      CopyFrom = #{copyfrom,jdbcType=VARCHAR},
+      KeyWords = #{keywords,jdbcType=VARCHAR},
+      Content = #{content,jdbcType=VARCHAR},
+      ImgUrl = #{imgurl,jdbcType=VARCHAR},
+      CreateTime = #{createtime,jdbcType=TIMESTAMP},
+      Enabled = #{enabled,jdbcType=CHAR}
+    where "Info ID" = #{infoId,jdbcType=CHAR}
+  </update>
+</mapper>
