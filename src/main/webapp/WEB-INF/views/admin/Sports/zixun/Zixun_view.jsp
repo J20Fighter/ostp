@@ -45,276 +45,9 @@
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
 	</head>
-
 	<body>
-		<div class="navbar navbar-default" id="navbar">
-			<script type="text/javascript">
-				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
-			</script>
-
-			<div class="navbar-container" id="navbar-container">
-				<div class="navbar-header pull-left">
-					<a href="#" class="navbar-brand">
-						<small>
-							<i class="icon-leaf"></i>
-							OSTP后台管理系统
-						</small>
-					</a><!-- /.brand -->
-				</div><!-- /.navbar-header -->
-
-				<div class="navbar-header pull-right" role="navigation">
-					<ul class="nav ace-nav">
-					
-						<li class="light-blue">
-							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
-								<span class="user-info">
-									<small style="font-size: 60%;">欢迎回来</small>
-									小波
-								</span>
-
-								<i class="icon-caret-down"></i>
-							</a>
-
-							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-								<li>
-									<a href="#">
-										<i class="icon-cog"></i>
-										设置
-									</a>
-								</li>
-
-								<li>
-									<a href="#">
-										<i class="icon-user"></i>
-										个人资料
-									</a>
-								</li>
-
-								<li class="divider"></li>
-
-								<li>
-									<a href="#">
-										<i class="icon-off"></i>
-										退出
-									</a>
-								</li>
-							</ul>
-						</li>
-					
-					</ul><!-- /.ace-nav -->
-				</div><!-- /.navbar-header -->
-				
-			</div><!-- /.container -->
-		</div>
-
-		<div class="main-container" id="main-container">
-			<script type="text/javascript">
-				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
-			</script>
-
-			<div class="main-container-inner">
-				<a class="menu-toggler" id="menu-toggler" href="#">
-					<span class="menu-text"></span>
-				</a>
-
-				<div class="sidebar" id="sidebar">
-					<script type="text/javascript">
-						try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
-					</script>
-
-					<ul class="nav nav-list">
-						<li>
-							<a href="typography.html">
-								<i class="icon-desktop"></i>
-								<span class="menu-text"> 后台首页 </span>
-							</a>
-						</li>
-						
-						<li>
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-adjust"></i>
-								<span class="menu-text"> 系统管理 </span>
-
-								<b class="arrow icon-angle-down"></b>
-							</a>
-
-							<ul class="submenu">
-								<li>
-									<a href="elements.html">
-										<i class="icon-double-angle-right"></i>
-										组织管理
-									</a>
-								</li>
-
-								<li>
-									<a href="buttons.html">
-										<i class="icon-double-angle-right"></i>
-										系统用户
-									</a>
-								</li>
-
-								<li>
-									<a href="treeview.html">
-										<i class="icon-double-angle-right"></i>
-										会员管理
-									</a>
-								</li>
-
-								<li>
-									<a href="jquery-ui.html">
-										<i class="icon-double-angle-right"></i>
-										在线管理
-									</a>
-								</li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-folder-open-alt"></i>
-								<span class="menu-text"> 基础数据管理 </span>
-
-								<b class="arrow icon-angle-down"></b>
-							</a>
-
-							<ul class="submenu">
-								<li>
-									<a href="elements.html">
-										<i class="icon-double-angle-right"></i>
-										户外运动类型
-									</a>
-								</li>
-
-								<li>
-									<a href="buttons.html">
-										<i class="icon-double-angle-right"></i>
-										户外运动
-									</a>
-								</li>
-
-								<li>
-									<a href="treeview.html">
-										<i class="icon-double-angle-right"></i>
-										装备功能类型
-									</a>
-								</li>
-
-								<li>
-									<a href="jquery-ui.html">
-										<i class="icon-double-angle-right"></i>
-										图像风格类型
-									</a>
-								</li>
-							</ul>
-						</li>
-
-						<li class="active">
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-dashboard"></i>
-								<span class="menu-text"> 资讯管理 </span>
-
-								<b class="arrow icon-angle-down"></b>
-							</a>
-
-							<ul class="submenu">
-								<li>
-									<a href="Zixun.html">
-										<i class="icon-double-angle-right"></i>
-										资讯列表
-									</a>
-								</li>
-
-								<li>
-									<a href="Zixun_add.html">
-										<i class="icon-double-angle-right"></i>
-										资讯添加
-									</a>
-								</li>
-
-								<li>
-									<a href="Zixun_edit.html">
-										<i class="icon-double-angle-right"></i>
-										资讯编辑
-									</a>
-								</li>
-
-								<li>
-									<a href="Zixun_view.html">
-										<i class="icon-double-angle-right"></i>
-										资讯详情
-									</a>
-								</li>
-								
-							</ul>
-						</li>
-
-						<li>
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-headphones"></i>
-								<span class="menu-text"> 装备管理 </span>
-
-								<b class="arrow icon-angle-down"></b>
-							</a>
-						</li>
-						
-						<li>
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-camera-retro"></i>
-								<span class="menu-text"> 摄影管理 </span>
-
-								<b class="arrow icon-angle-down"></b>
-							</a>
-						</li>
-						
-						<li>
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-download"></i>
-								<span class="menu-text"> 位置管理 </span>
-
-								<b class="arrow icon-angle-down"></b>
-							</a>
-						</li>
-						
-						<li>
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-facetime-video"></i>
-								<span class="menu-text"> 教程管理 </span>
-
-								<b class="arrow icon-angle-down"></b>
-							</a>
-						</li>
-						
-						<li>
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-eye-open"></i>
-								<span class="menu-text"> 攻略管理 </span>
-
-								<b class="arrow icon-angle-down"></b>
-							</a>
-						</li>
-						
-						<li>
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-comments"></i>
-								<span class="menu-text"> 社区管理 </span>
-
-								<b class="arrow icon-angle-down"></b>
-							</a>
-						</li>
-					</ul><!-- /.nav-list -->
-
-					<div class="sidebar-collapse" id="sidebar-collapse">
-						<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
-					</div>
-
-					<script type="text/javascript">
-						try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
-					</script>
-				</div>
-				
 				<!--将这一部分1转化成ifream-->
-				<div class="main-content">
+				<div class="main-content" style="margin-left: 0px;margin-bottom: 0px;">
 					<div class="breadcrumbs" id="breadcrumbs">
 						<script type="text/javascript">
 							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
@@ -587,27 +320,13 @@
 						</div>
 					</div>
 				</div><!-- /#ace-settings-container -->
-			</div><!-- /.main-container-inner -->
-
+		
 			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
 				<i class="icon-double-angle-up icon-only bigger-110"></i>
 			</a>
-		</div><!-- /.main-container -->
 
-		<!-- basic scripts -->
 
-		<!--[if !IE]> -->
-
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-		<!-- <![endif]-->
-
-		<!--[if IE]>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<![endif]-->
-
-		<!--[if !IE]> -->
-
+		
 		<script type="text/javascript">
 			window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"script>");
 		</script>
@@ -635,21 +354,13 @@
 		<script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
 		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
 		<script src="assets/js/jquery.slimscroll.min.js"></script>
-		<script src="assets/js/jquery.easy-pie-chart.min.js"></script>
 		<script src="assets/js/jquery.sparkline.min.js"></script>
-		<script src="assets/js/flot/jquery.flot.min.js"></script>
-		<script src="assets/js/flot/jquery.flot.pie.min.js"></script>
-		<script src="assets/js/flot/jquery.flot.resize.min.js"></script>
 
 		<!-- ace scripts -->
 
 		<script src="assets/js/ace-elements.min.js"></script>
 		<script src="assets/js/ace.min.js"></script>
 
-		<!-- inline scripts related to this page -->
-
-		<script src="js/sport.js"></script>
-		<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+	
 </body>
 </html>
-
