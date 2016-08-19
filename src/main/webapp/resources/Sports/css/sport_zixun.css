@@ -4,3 +4,10 @@
 .hide_select{
 	display: none;
 }
+.right-iframe{
+	position: absolute;
+	left: 190px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+}

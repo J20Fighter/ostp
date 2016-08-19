@@ -49,7 +49,7 @@ public class UserController {
 	 */
 	@RequestMapping(value = "/admin/apply-list", method = RequestMethod.GET)
 	private String adminApplyPage(Model model, HttpServletRequest request) {
-		return "admin/Sports/Basic_date1";
+		return "admin/Sports/index";
 	}
 	
 	/**
