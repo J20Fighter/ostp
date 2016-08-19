@@ -62,9 +62,10 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 		String result = passwordEncoder.encode(sh1Password);
 		UserInfo userDetails = (UserInfo) userDetailsService.loadUserByUsername(username);
 		if (userDetails == null || "0".equals(userDetails.getEnabled()) || !passwordEncoder.matches(userDetails.getPassword(), result)) {
-			// System.out.println("用户名或密码错误！");
+			 System.out.println("用户名或密码错误！");
 			throw new AuthenticationServiceException("用户名或密码错误！");
 		}
+		System.out.println("用户密码正确");
 		UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(username, password);
 		this.setDetails(request, authRequest);
 		Authentication authentication = null;

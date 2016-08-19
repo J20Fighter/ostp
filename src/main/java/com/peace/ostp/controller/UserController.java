@@ -37,7 +37,7 @@ public class UserController {
 		if ("failed".equals(result)) {
 			model.addAttribute("result", "无效的用户名或者密码");
 		}
-		return "isslogin";
+		return "admin/Sports/login";
 	}
 	
 	/**

@@ -151,14 +151,14 @@ String basePath = request.getScheme() + "://"
 
 					<ul class="nav nav-list">
 						<li class="active">
-							<a href="index.html" target="mainFrame">
+							<a href="wc" target="mainFrame">
 								<i class="icon-desktop"></i>
 								<span class="menu-text"> 后台首页 </span>
 							</a>
 						</li>
 						
 						<li>
-							<a href="xitong/xitong.html" class="dropdown-toggle" target="mainFrame">
+							<a href="xitong" class="dropdown-toggle" target="mainFrame">
 								<i class="icon-adjust"></i>
 								<span class="menu-text"> 系统管理 </span>
 
@@ -167,21 +167,21 @@ String basePath = request.getScheme() + "://"
 
 							<ul class="submenu">
 								<li>
-									<a href="xitong/xitong_quanxian.html" target="mainFrame">
+									<a href="xitong_quanxian" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										权限管理
 									</a>
 								</li>
 
 								<li>
-									<a href="xitong/xitong_user.html" target="mainFrame">
+									<a href="xitong_user" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										系统用户
 									</a>
 								</li>
 
 								<li>
-									<a href="xitong/xitong_juese.html" target="mainFrame">
+									<a href="xitong_juese" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										角色用户
 									</a>
@@ -190,7 +190,7 @@ String basePath = request.getScheme() + "://"
 						</li>
 
 						<li>
-							<a href="basic/basic.html" class="dropdown-toggle" target="mainFrame">
+							<a href="basic" class="dropdown-toggle" target="mainFrame">
 								<i class="icon-folder-open-alt"></i>
 								<span class="menu-text"> 基础数据管理 </span>
 
@@ -199,35 +199,35 @@ String basePath = request.getScheme() + "://"
 
 							<ul class="submenu">
 								<li>
-									<a href="basic/basic_sport.html" target="mainFrame">
+									<a href="basic_sport" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										户外运动类型
 									</a>
 								</li>
 
 								<li>
-									<a href="basic/basic_outdoor.html" target="mainFrame">
+									<a href="basic_outdoor" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										户外运动
 									</a>
 								</li>
 
 								<li>
-									<a href="basic/basic_zhuangbei.html" target="mainFrame">
+									<a href="basic_zhuangbei" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										装备功能类型
 									</a>
 								</li>
 
 								<li>
-									<a href="basic/basic_image.html" target="mainFrame">
+									<a href="basic_image" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										图像风格类型
 									</a>
 								</li>
 								
 								<li>
-									<a href="basic/basic_weizhi.html" target="mainFrame">
+									<a href="basic_weizhi" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										位置类型类型
 									</a>
@@ -236,7 +236,7 @@ String basePath = request.getScheme() + "://"
 						</li>
 
 						<li>
-							<a href="zixun/zixun.html" class="dropdown-toggle" target="mainFrame">
+							<a href="zixun" class="dropdown-toggle" target="mainFrame">
 								<i class="icon-dashboard"></i>
 								<span class="menu-text"> 资讯管理 </span>
 
@@ -245,14 +245,14 @@ String basePath = request.getScheme() + "://"
 
 							<ul class="submenu">
 								<li>
-									<a href="zixun/zixun.html" target="mainFrame">
+									<a href="zixun" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										资讯列表
 									</a>
 								</li>
 
 								<li>
-									<a href="zixun/zixun_add.html" target="mainFrame">
+									<a href="zixun_add" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										资讯添加
 									</a>
@@ -262,7 +262,7 @@ String basePath = request.getScheme() + "://"
 						</li>
 
 						<li>
-							<a href="zhuangbei/zhuangbei.html" class="dropdown-toggle" target="mainFrame">
+							<a href="zhuangbei" class="dropdown-toggle" target="mainFrame">
 								<i class="icon-headphones"></i>
 								<span class="menu-text"> 装备管理 </span>
 
@@ -270,14 +270,14 @@ String basePath = request.getScheme() + "://"
 							</a>
 							<ul class="submenu">
 								<li>
-									<a href="zhuangbei/zhuangbei.html" target="mainFrame">
+									<a href="zhuangbei" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										装备列表
 									</a>
 								</li>
 
 								<li>
-									<a href="zhuangbei/zhuangbei_add.html" target="mainFrame">
+									<a href="zhuangbei_add" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										装备添加
 									</a>
@@ -287,7 +287,7 @@ String basePath = request.getScheme() + "://"
 						</li>
 						
 						<li>
-							<a href="sheying/sheying.html" class="dropdown-toggle" target="mainFrame">
+							<a href="sheying" class="dropdown-toggle" target="mainFrame">
 								<i class="icon-camera-retro"></i>
 								<span class="menu-text"> 摄影管理 </span>
 
@@ -295,14 +295,14 @@ String basePath = request.getScheme() + "://"
 							</a>
 							<ul class="submenu">
 								<li>
-									<a href="sheying/sheying.html" target="mainFrame">
+									<a href="sheying" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										摄影列表
 									</a>
 								</li>
 
 								<li>
-									<a href="sheying/sheying_add.html" target="mainFrame">
+									<a href="sheying_add" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										摄影添加
 									</a>
@@ -312,7 +312,7 @@ String basePath = request.getScheme() + "://"
 						</li>
 						
 						<li>
-							<a href="weizhi/weizhi.html" class="dropdown-toggle" target="mainFrame">
+							<a href="weizhi" class="dropdown-toggle" target="mainFrame">
 								<i class="icon-download"></i>
 								<span class="menu-text"> 位置管理 </span>
 
@@ -320,14 +320,14 @@ String basePath = request.getScheme() + "://"
 							</a>
 							<ul class="submenu">
 								<li>
-									<a href="weizhi/weizhi.html" target="mainFrame">
+									<a href="weizhi" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										位置列表
 									</a>
 								</li>
 
 								<li>
-									<a href="weizhi/weizhi_add.html" target="mainFrame">
+									<a href="weizhi_add" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										位置添加
 									</a>
@@ -337,7 +337,7 @@ String basePath = request.getScheme() + "://"
 						</li>
 						
 						<li>
-							<a href="jiaocheng/jiaocheng.html" class="dropdown-toggle" target="mainFrame">
+							<a href="jiaocheng" class="dropdown-toggle" target="mainFrame">
 								<i class="icon-facetime-video"></i>
 								<span class="menu-text"> 教程管理 </span>
 
@@ -345,14 +345,14 @@ String basePath = request.getScheme() + "://"
 							</a>
 							<ul class="submenu">
 								<li>
-									<a href="jiaocheng/jiaocheng.html" target="mainFrame">
+									<a href="jiaocheng" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										教程列表
 									</a>
 								</li>
 
 								<li>
-									<a href="jiaocheng/jiaocheng_add.html" target="mainFrame">
+									<a href="jiaocheng_add" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										教程添加
 									</a>
@@ -362,7 +362,7 @@ String basePath = request.getScheme() + "://"
 						</li>
 						
 						<li>
-							<a href="xingcheng/xingcheng.html" class="dropdown-toggle" target="mainFrame">
+							<a href="xingcheng" class="dropdown-toggle" target="mainFrame">
 								<i class="icon-eye-open"></i>
 								<span class="menu-text"> 行程管理 </span>
 
@@ -370,14 +370,14 @@ String basePath = request.getScheme() + "://"
 							</a>
 							<ul class="submenu">
 								<li>
-									<a href="xingcheng/xingcheng.html" target="mainFrame">
+									<a href="xingcheng" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										行程列表
 									</a>
 								</li>
 
 								<li>
-									<a href="xingcheng/xingcheng_add.html" target="mainFrame">
+									<a href="xingcheng_add" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										行程添加
 									</a>
@@ -387,7 +387,7 @@ String basePath = request.getScheme() + "://"
 						</li>
 						
 						<li>
-							<a href="shequ/shequ.html" class="dropdown-toggle" target="mainFrame">
+							<a href="shequ" class="dropdown-toggle" target="mainFrame">
 								<i class="icon-comments"></i>
 								<span class="menu-text"> 社区管理 </span>
 
@@ -395,14 +395,14 @@ String basePath = request.getScheme() + "://"
 							</a>
 							<ul class="shequ/submenu">
 								<li>
-									<a href="shequ.html" target="mainFrame">
+									<a href="shequ" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										社区列表
 									</a>
 								</li>
 
 								<li>
-									<a href="shequ/shequ_add.html" target="mainFrame">
+									<a href="shequ_add" target="mainFrame">
 										<i class="icon-double-angle-right"></i>
 										社区添加
 									</a>

@@ -33,14 +33,7 @@ public class BaseController {
 	private IUser userService;
 
 
-/**
- * 资源访问
- * 
- */
-	@RequestMapping(value="/wc",method=RequestMethod.GET)
-	public String zyGet(Model model, HttpServletRequest request){
-		return "admin/Sports/welcome";
-	}
+
 
 	/**
 	 * 网站首页

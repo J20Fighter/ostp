@@ -1,3 +1,4 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -5,8 +6,8 @@
 		<title>资讯</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!-- basic styles -->
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+		<link href="resources/Sports/assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="resources/Sports/assets/css/font-awesome.min.css" />
 
 		<!--[if IE 7]>
 		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
@@ -20,29 +21,29 @@
 
 		<!-- ace styles -->
 
-		<link rel="stylesheet" href="assets/css/ace.min.css" />
-		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
-		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="resources/Sports/assets/css/ace.min.css" />
+		<link rel="stylesheet" href="resources/Sports/assets/css/ace-rtl.min.css" />
+		<link rel="stylesheet" href="resources/Sports/assets/css/ace-skins.min.css" />
 
-		<link rel="stylesheet" href="css/sport_zixun.css" />
+		<link rel="stylesheet" href="resources/Sports/css/sport_zixun.css" />
 		<!--[if lte IE 8]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		  <link rel="stylesheet" href="resources/Sports/assets/css/ace-ie.min.css" />
 		<![endif]-->
 
 		<!-- inline styles related to this page -->
 
 		<!-- ace settings handler -->
 
-		<script src="assets/js/ace-extra.min.js"></script>
+		<script src="resources/Sports/assets/js/ace-extra.min.js"></script>
 		
-		<script src="js/sport_zixun.js"></script>
-		<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+		<script src="resources/Sports/js/sport_zixun.js"></script>
+		<script type="text/javascript" src="resources/Sports/ckeditor/ckeditor.js"></script>
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
 		<!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.js"></script>
-		<script src="assets/js/respond.min.js"></script>
+		<script src="resources/Sports/assets/js/html5shiv.js"></script>
+		<script src="resources/Sports/assets/js/respond.min.js"></script>
 		<![endif]-->
 	</head>
 	<body>
@@ -472,38 +473,38 @@
 
 		
 		<script type="text/javascript">
-			window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"script>");
+			window.jQuery || document.write("<script src='resources/Sports/assets/js/jquery-2.0.3.min.js'>"+"<"+"script>");
 		</script>
 
 		<!-- <![endif]-->
 
 		<!--[if IE]>
 <script type="text/javascript">
- window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
+ window.jQuery || document.write("<script src='resources/Sports/assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
 </script>
 <![endif]-->
 
 		<script type="text/javascript">
-			if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"script>");
+			if("ontouchend" in document) document.write("<script src='resources/Sports/assets/js/jquery.mobile.custom.min.js'>"+"<"+"script>");
 		</script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/typeahead-bs2.min.js"></script>
+		<script src="resources/Sports/assets/js/bootstrap.min.js"></script>
+		<script src="resources/Sports/assets/js/typeahead-bs2.min.js"></script>
 
 		<!-- page specific plugin scripts -->
 
 		<!--[if lte IE 8]>
-		  <script src="assets/js/excanvas.min.js"></script>
+		  <script src="resources/Sports/assets/js/excanvas.min.js"></script>
 		<![endif]-->
 
-		<script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
-		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
-		<script src="assets/js/jquery.slimscroll.min.js"></script>
-		<script src="assets/js/jquery.sparkline.min.js"></script>
+		<script src="resources/Sports/assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script src="resources/Sports/assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="resources/Sports/assets/js/jquery.slimscroll.min.js"></script>
+		<script src="resources/Sports/assets/js/jquery.sparkline.min.js"></script>
 
 		<!-- ace scripts -->
 
-		<script src="assets/js/ace-elements.min.js"></script>
-		<script src="assets/js/ace.min.js"></script>
+		<script src="resources/Sports/assets/js/ace-elements.min.js"></script>
+		<script src="resources/Sports/assets/js/ace.min.js"></script>
 
 	
 </body>

@@ -1,3 +1,4 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,44 +6,44 @@
     <title>位置编辑</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- basic styles -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link href="resources/Sports/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="resources/Sports/assets/css/font-awesome.min.css" />
 
     <!--[if IE 7]>
-    <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+    <link rel="stylesheet" href="resources/Sports/assets/css/font-awesome-ie7.min.css" />
     <![endif]-->
 
     <!-- page specific plugin styles -->
 
     <!-- fonts -->
 
-    <link rel="stylesheet" href="js/extra/css.css" />
+    <link rel="stylesheet" href="resources/Sports/js/extra/css.css" />
 
     <!-- ace styles -->
 
-    <link rel="stylesheet" href="assets/css/ace.min.css" />
-    <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
-    <link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="resources/Sports/assets/css/ace.min.css" />
+    <link rel="stylesheet" href="resources/Sports/assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="resources/Sports/assets/css/ace-skins.min.css" />
 
-    <link rel="stylesheet" href="css/sport_zixun.css" />
+    <link rel="stylesheet" href="resources/Sports/css/sport_zixun.css" />
     <!--[if lte IE 8]>
-    <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+    <link rel="stylesheet" href="resources/Sports/assets/css/ace-ie.min.css" />
     <![endif]-->
 
     <!-- inline styles related to this page -->
 
     <!-- ace settings handler -->
 
-    <script src="assets/js/ace-extra.min.js"></script>
+    <script src="resources/Sports/assets/js/ace-extra.min.js"></script>
 
-    <script src="js/sport_zixun.js"></script>
-    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+    <script src="resources/Sports/js/sport_zixun.js"></script>
+    <script type="text/javascript" src="resources/Sports/ckeditor/ckeditor.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
     <!--[if lt IE 9]>
-    <script src="assets/js/html5shiv.js"></script>
-    <script src="assets/js/respond.min.js"></script>
+    <script src="resources/Sports/assets/js/html5shiv.js"></script>
+    <script src="resources/Sports/assets/js/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
