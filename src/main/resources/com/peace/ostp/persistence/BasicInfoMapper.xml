@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.peace.ostp.persistence.BasicInfoMapper" >
   <resultMap id="BaseResultMap" type="com.peace.ostp.domain.BasicInfo" >
-    <id column="Info ID" property="infoId" jdbcType="CHAR" />
+    <id column="InfoID" property="infoId" jdbcType="CHAR" />
     <result column="Author" property="author" jdbcType="VARCHAR" />
     <result column="Title" property="title" jdbcType="VARCHAR" />
     <result column="FirstLevelInfoTypeID" property="firstlevelinfotypeid" jdbcType="CHAR" />
@@ -16,21 +16,21 @@
     <result column="Enabled" property="enabled" jdbcType="CHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    "Info ID", Author, Title, FirstLevelInfoTypeID, SecondLevelInfoTypeID, SportTypeID, 
+    InfoID, Author, Title, FirstLevelInfoTypeID, SecondLevelInfoTypeID, SportTypeID, 
     CopyFrom, KeyWords, Content, ImgUrl, CreateTime, Enabled
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
     from basicinfo
-    where "Info ID" = #{infoId,jdbcType=CHAR}
+    where InfoID = #{infoId,jdbcType=CHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from basicinfo
-    where "Info ID" = #{infoId,jdbcType=CHAR}
+    where InfoID = #{infoId,jdbcType=CHAR}
   </delete>
   <insert id="insert" parameterType="com.peace.ostp.domain.BasicInfo" >
-    insert into basicinfo ("Info ID", Author, Title, 
+    insert into basicinfo (InfoID, Author, Title, 
       FirstLevelInfoTypeID, SecondLevelInfoTypeID, 
       SportTypeID, CopyFrom, KeyWords, 
       Content, ImgUrl, CreateTime, 
@@ -45,7 +45,7 @@
     insert into basicinfo
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="infoId != null" >
-        "Info ID",
+        InfoID,
       </if>
       <if test="author != null" >
         Author,
@@ -157,7 +157,7 @@
         Enabled = #{enabled,jdbcType=CHAR},
       </if>
     </set>
-    where "Info ID" = #{infoId,jdbcType=CHAR}
+    where InfoID = #{infoId,jdbcType=CHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.peace.ostp.domain.BasicInfo" >
     update basicinfo
@@ -172,6 +172,6 @@
       ImgUrl = #{imgurl,jdbcType=VARCHAR},
       CreateTime = #{createtime,jdbcType=TIMESTAMP},
       Enabled = #{enabled,jdbcType=CHAR}
-    where "Info ID" = #{infoId,jdbcType=CHAR}
+    where InfoID = #{infoId,jdbcType=CHAR}
   </update>
 </mapper>

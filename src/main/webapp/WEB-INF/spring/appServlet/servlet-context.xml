@@ -42,4 +42,14 @@
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Service" />
 	</context:component-scan>
+	<!-- 解析器注册 -->  
+   <!--  <beans:bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">  
+        <beans:property name="messageConverters">  
+            <beans:list>  
+                <beans:ref bean="stringHttpMessageConverter"/>  
+            </beans:list>  
+        </beans:property>  
+    </beans:bean>  
+    String类型解析器，允许直接返回String类型的消息  
+    <beans:bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter"/>  -->
 </beans:beans>

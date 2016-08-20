@@ -421,7 +421,7 @@ String basePath = request.getScheme() + "://"
 					</script>
 				</div>
 				<div class="right-iframe">
-					<iframe src="wc" frameborder="0" name="mainFrame" scrolling="no" marginheight="0" marginwidth="0" id="iframepage" onLoad="iFrameHeight()" width="100%" height="800px">
+					<iframe src="wc" frameborder="0" name="mainFrame" scrolling="auto" marginheight="0" marginwidth="0" id="iframepage" onLoad="iFrameHeight()" width="100%" height="800px">
 						
 					</iframe>
 					<script type="text/javascript" language="javascript">   

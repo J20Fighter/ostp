@@ -1,7 +1,14 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme() + "://"
++ request.getServerName() + ":" + request.getServerPort()
++ path + "/";
+%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<base href="<%=basePath%>">
 		<meta charset="utf-8" />
 		<title>资讯</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +17,7 @@
 		<link rel="stylesheet" href="resources/Sports/assets/css/font-awesome.min.css" />
 
 		<!--[if IE 7]>
-		  <link rel="stylesheet" href="resources/Sports/assets/css/font-awesome-ie7.min.css" />
+		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
 		<![endif]-->
 
 		<!-- page specific plugin styles -->
@@ -27,7 +34,7 @@
 
 		<link rel="stylesheet" href="resources/Sports/css/sport_zixun.css" />
 		<!--[if lte IE 8]>
-		  <link rel="stylesheet" href="resources/Sports/assets/css/ace-ie.min.css" />
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
 		<![endif]-->
 
 		<!-- inline styles related to this page -->
@@ -42,8 +49,8 @@
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
 		<!--[if lt IE 9]>
-		<script src="resources/Sports/assets/js/html5shiv.js"></script>
-		<script src="resources/Sports/assets/js/respond.min.js"></script>
+		<script src="assets/js/html5shiv.js"></script>
+		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
 	</head>
 	<body>
@@ -97,7 +104,7 @@
 									<div class="col-xs-12">
 										<!-- PAGE CONTENT BEGINS -->
 										
-										<form>
+										<form action="info_add" method="POST">
 											<div class="row">
 												<div class="col-sm-4">
 													<!--添加下拉菜单-->
@@ -106,13 +113,13 @@
 				
 														<div class="col-sm-8">
 															<!--<input type="text" id="form-field-1" placeholder="Username" class="form-control">-->
-															<select class="form-control">
-																<option>攀岩</option>
-																<option>潜水</option>
-																<option>徒步</option>
-																<option>骑马</option>
-																<option>登山</option>
-																<option>滑雪</option>
+															<select class="form-control" name="sporttypeid">
+																<option value="1">攀岩</option>
+																<option value="2">潜水</option>
+																<option value="3">徒步</option>
+																<option value="4">骑马</option>
+																<option value="5">登山</option>
+																<option value="6">滑雪</option>
 															</select>
 														</div>
 													</div>
@@ -123,12 +130,12 @@
 				
 														<div class="col-sm-8">
 															<!--<input type="text" id="form-field-1" placeholder="Username" class="form-control">-->
-															<select class="form-control" id="first_select">
-																<option>户外知识</option>
-																<option>装备资讯</option>
-																<option>专题活动</option>
-																<option>赛事新闻</option>
-																<option>专栏专访</option>
+															<select class="form-control" id="first_select" name="firstlevelinfotypeid">
+																<option value="1">户外知识</option>
+																<option value="2">装备资讯</option>
+																<option value="3">专题活动</option>
+																<option value="4">赛事新闻</option>
+																<option value="5">专栏专访</option>
 															</select>
 														</div>
 													</div>
@@ -139,7 +146,7 @@
 				
 														<div class="col-sm-8" id="second_select">
 															<!--<input type="text" id="form-field-1" placeholder="Username" class="form-control">-->
-															<select class="form-control">
+															<select class="form-control" name="secondlevelinfotypeid">
 																<option>户外常识</option>
 																<option>安全知识</option>
 																<option>户外公开课</option>
@@ -147,10 +154,10 @@
 															</select>
 															
 															<select class="form-control hide_select">
-																<option>新品报道</option>
-																<option>装备评测</option>
-																<option>装备品牌</option>
-																<option>装备行情</option>
+																<option value="1">新品报道</option>
+																<option value="2">装备评测</option>
+																<option value="3">装备品牌</option>
+																<option value="4">装备行情</option>
 															</select>
 															
 															<select class="form-control hide_select">
@@ -181,7 +188,7 @@
 														<label class="col-sm-3 control-label no-padding-right" for="form-field-1">资讯标题</label>
 				
 														<div class="col-sm-9">
-															<input type="text" id="form-field-1" placeholder="title" class="form-control" required="required" oninvalid="setCustomValidity('请输入资讯标题')" oninput="setCustomValidity('')">
+															<input name="title" type="text" id="form-field-1" placeholder="title" class="form-control" required="required" oninvalid="setCustomValidity('请输入资讯标题')" oninput="setCustomValidity('')">
 														</div>
 													</div>
 												</div>
@@ -190,7 +197,7 @@
 														<label class="col-sm-3 control-label no-padding-right" for="form-field-1">作者</label>
 				
 														<div class="col-sm-9">
-															<input type="text" id="form-field-1" placeholder="autor" class="form-control" required="required" oninvalid="setCustomValidity('请输入作者')" oninput="setCustomValidity('')">
+															<input name="author" type="text" id="form-field-1" placeholder="autor" class="form-control" required="required" oninvalid="setCustomValidity('请输入作者')" oninput="setCustomValidity('')">
 														</div>
 													</div>
 												</div>
@@ -199,7 +206,7 @@
 														<label class="col-sm-3 control-label no-padding-right" for="form-field-1">文章来源</label>
 				
 														<div class="col-sm-9">
-															<input type="text" id="form-field-1" placeholder="origin" class="form-control" required="required" oninvalid="setCustomValidity('请输入文章来源')" oninput="setCustomValidity('')">
+															<input name="copyfrom" type="text" id="form-field-1" placeholder="origin" class="form-control" required="required" oninvalid="setCustomValidity('请输入文章来源')" oninput="setCustomValidity('')">
 														</div>
 													</div>
 												</div>
@@ -211,7 +218,7 @@
 														<label class="col-sm-3 control-label no-padding-right" for="form-field-1">关键字</label>
 				
 														<div class="col-sm-9">
-															<input type="text" id="form-field-1" placeholder="keyword" class="form-control" required="required" oninvalid="setCustomValidity('请输入关键字')" oninput="setCustomValidity('')">
+															<input name="keywords" type="text" id="form-field-1" placeholder="keyword" class="form-control" required="required" oninvalid="setCustomValidity('请输入关键字')" oninput="setCustomValidity('')">
 														</div>
 													</div>
 												</div>
@@ -220,7 +227,7 @@
 														<label class="col-sm-3 control-label no-padding-right" for="form-field-1">发布时间</label>
 				
 														<div class="col-sm-9">
-															<input type="text" id="form-field-1" placeholder="yyyy-mm-dd" class="form-control" required="required" oninvalid="setCustomValidity('请输入发布时间')" oninput="setCustomValidity('')">
+															<!-- <input name="createtime" type="text" id="form-field-1" placeholder="yyyy-MM-dd" onclick="laydate()" class="laydate-icon form-control" required="required" oninvalid="setCustomValidity('请输入发布时间')" oninput="setCustomValidity('')"> -->
 														</div>
 													</div>
 												</div>
@@ -229,7 +236,7 @@
 														<label class="col-sm-3 control-label no-padding-right" for="form-field-1">列表图片</label>
 				
 														<div class="col-sm-9">
-															<input type="file" id="form-field-1" required="required" oninvalid="setCustomValidity('请选择相关图片')" oninput="setCustomValidity('')">
+															<!-- <input name="imgurl" type="file" id="form-field-1" required="required" oninvalid="setCustomValidity('请选择相关图片')" oninput="setCustomValidity('')"> -->
 														</div>
 													</div>
 												</div>
@@ -239,7 +246,7 @@
 												<div class="form-group">
 													<label class="col-xs-12 control-label no-padding-right" for="form-field-1">资讯内容</label>
 													<div class="col-xs-12">
-														<textarea class="form-control" name="financial.bz" id="form-field-1" style="margin: 0 auto;" required="required" oninvalid="setCustomValidity('请输入资讯内容')" oninput="setCustomValidity('')">资讯内容</textarea>
+														<textarea name="content" class="form-control" name="financial.bz" id="form-field-1" style="margin: 0 auto;" required="required" oninvalid="setCustomValidity('请输入资讯内容')" oninput="setCustomValidity('')">资讯内容</textarea>
 														<p class="help-block text-danger"></p>
 														<script type="text/javascript">CKEDITOR.replace("financial.bz");</script>
 													</div>
@@ -251,7 +258,7 @@
 													<div class="col-sm-offset-5 col-md-3">
 														<button class="btn btn-primary" type="submit">
 															<i class="icon-ok bigger-110"></i>
-															查询
+															添加
 														</button>
 			
 														&nbsp; &nbsp; &nbsp;
@@ -336,7 +343,7 @@
 
 		<!--[if IE]>
 <script type="text/javascript">
- window.jQuery || document.write("<script src='resources/Sports/assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
+ window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
 </script>
 <![endif]-->
 
@@ -349,7 +356,7 @@
 		<!-- page specific plugin scripts -->
 
 		<!--[if lte IE 8]>
-		  <script src="resources/Sports/assets/js/excanvas.min.js"></script>
+		  <script src="assets/js/excanvas.min.js"></script>
 		<![endif]-->
 
 		<script src="resources/Sports/assets/js/jquery-ui-1.10.3.custom.min.js"></script>
@@ -361,7 +368,7 @@
 
 		<script src="resources/Sports/assets/js/ace-elements.min.js"></script>
 		<script src="resources/Sports/assets/js/ace.min.js"></script>
-
+		<script type="text/javascript" src="resources/js/laydate/laydate.js"></script>
 	
 </body>
 </html>
