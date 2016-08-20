@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50550
 File Encoding         : 65001
 
-Date: 2016-08-16 21:41:50
+Date: 2016-08-20 19:16:41
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,7 +35,7 @@ CREATE TABLE `basicequiptype` (
 -- ----------------------------
 DROP TABLE IF EXISTS `basicinfo`;
 CREATE TABLE `basicinfo` (
-  `Info ID` char(32) NOT NULL COMMENT '资讯标识',
+  `InfoID` char(32) NOT NULL COMMENT '资讯标识',
   `Author` varchar(20) NOT NULL COMMENT '作者',
   `Title` varchar(20) NOT NULL COMMENT '资讯标题',
   `FirstLevelInfoTypeID` char(32) NOT NULL COMMENT '资讯一级类型标识',
@@ -47,12 +47,14 @@ CREATE TABLE `basicinfo` (
   `ImgUrl` varchar(255) DEFAULT NULL COMMENT '列表图片',
   `CreateTime` datetime DEFAULT NULL COMMENT '创建时间',
   `Enabled` char(1) DEFAULT NULL COMMENT '逻辑删除标志',
-  PRIMARY KEY (`Info ID`)
+  PRIMARY KEY (`InfoID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='资讯：资讯';
 
 -- ----------------------------
 -- Records of basicinfo
 -- ----------------------------
+INSERT INTO `basicinfo` VALUES ('2.159654317539025', 'aa', 'tt', '1', '户外常识', '3', 'oo', 'java', '资讯内容', null, null, null);
+INSERT INTO `basicinfo` VALUES ('2.294375687186421', 'aa', 'tt', '1', '户外常识', '4', 'oo', 'java', '资讯内容', null, null, null);
 
 -- ----------------------------
 -- Table structure for basicphotostyle
