@@ -227,7 +227,7 @@ String basePath = request.getScheme() + "://"
 														<label class="col-sm-3 control-label no-padding-right" for="form-field-1">发布时间</label>
 				
 														<div class="col-sm-9">
-															<!-- <input name="createtime" type="text" id="form-field-1" placeholder="yyyy-MM-dd" onclick="laydate()" class="laydate-icon form-control" required="required" oninvalid="setCustomValidity('请输入发布时间')" oninput="setCustomValidity('')"> -->
+															<input name="createtime" type="text" id="form-field-1" placeholder="yyyy-MM-dd" onclick="laydate()" class="laydate-icon form-control" required="required" oninvalid="setCustomValidity('请输入发布时间')" oninput="setCustomValidity('')">
 														</div>
 													</div>
 												</div>
