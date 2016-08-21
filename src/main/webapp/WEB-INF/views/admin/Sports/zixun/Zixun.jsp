@@ -316,6 +316,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 																<td>
 																	<a href="#">${status.index + 1}</a>
+																	<a href="#">${item.infoId}</a>
 																</td>
 																<td>
 																	<a href="#">${item.title}</a>
@@ -333,7 +334,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 																<td>
 																	<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
 																		
-																		<a class="blue" href="zixun_view.html">
+																		<a class="blue" href="zixun_view/InfoID=${item.infoId}">
 																			<i class="icon-search bigger-130"></i> 详情
 																		</a>
 																		

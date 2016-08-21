@@ -1,7 +1,18 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
+    	<base href="<%=basePath%>">
 		<meta charset="utf-8" />
 		<title>资讯</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -106,14 +117,7 @@
 				
 														<div class="col-sm-8">
 															<!--<input type="text" id="form-field-1" placeholder="Username" class="form-control">-->
-															<select class="form-control" disabled="disabled">
-																<option>攀岩</option>
-																<option>潜水</option>
-																<option>徒步</option>
-																<option>骑马</option>
-																<option>登山</option>
-																<option>滑雪</option>
-															</select>
+															<input class="form-control" disabled="disabled" value="${basicinfo.sporttypeid}" />
 														</div>
 													</div>
 												</div>
@@ -123,13 +127,8 @@
 				
 														<div class="col-sm-8">
 															<!--<input type="text" id="form-field-1" placeholder="Username" class="form-control">-->
-															<select class="form-control" id="first_select" disabled="disabled">
-																<option>户外知识</option>
-																<option>装备资讯</option>
-																<option>专题活动</option>
-																<option>赛事新闻</option>
-																<option>专栏专访</option>
-															</select>
+															<input class="form-control" id="first_select" disabled="disabled" value="${ basicinfo.firstlevelinfotypeid}">
+																
 														</div>
 													</div>
 												</div>
@@ -139,12 +138,8 @@
 				
 														<div class="col-sm-8" id="second_select">
 															<!--<input type="text" id="form-field-1" placeholder="Username" class="form-control">-->
-															<select class="form-control" disabled="disabled">
-																<option>户外常识</option>
-																<option>安全知识</option>
-																<option>户外公开课</option>
-																<option>领队培训</option>
-															</select>
+															<input class="form-control" disabled="disabled" value="${ basicinfo.secondlevelinfotypeid}" />
+																
 															
 															<select class="form-control hide_select" disabled="disabled">
 																<option>新品报道</option>
@@ -181,7 +176,7 @@
 														<label class="col-sm-3 control-label no-padding-right" for="form-field-1">资讯标题</label>
 				
 														<div class="col-sm-9">
-															<input type="text" id="form-field-1" placeholder="title" class="form-control" disabled="disabled">
+															<input type="text" id="form-field-1" placeholder="title" class="form-control" disabled="disabled" value="${basicinfo.title }">
 														</div>
 													</div>
 												</div>
@@ -190,7 +185,7 @@
 														<label class="col-sm-3 control-label no-padding-right" for="form-field-1">作者</label>
 				
 														<div class="col-sm-9">
-															<input type="text" id="form-field-1" placeholder="autor" class="form-control" disabled="disabled">
+															<input type="text" id="form-field-1" placeholder="autor" class="form-control" disabled="disabled" value="${basicinfo.author }">
 														</div>
 													</div>
 												</div>
@@ -199,7 +194,7 @@
 														<label class="col-sm-3 control-label no-padding-right" for="form-field-1">文章来源</label>
 				
 														<div class="col-sm-9">
-															<input type="text" id="form-field-1" placeholder="origin" class="form-control" disabled="disabled">
+															<input type="text" id="form-field-1" placeholder="origin" class="form-control" disabled="disabled" value="${basicinfo.copyfrom }">
 														</div>
 													</div>
 												</div>
@@ -211,7 +206,7 @@
 														<label class="col-sm-3 control-label no-padding-right" for="form-field-1">关键字</label>
 				
 														<div class="col-sm-9">
-															<input type="text" id="form-field-1" placeholder="keyword" class="form-control" disabled="disabled">
+															<input type="text" id="form-field-1" placeholder="keyword" class="form-control" disabled="disabled" value="${basicinfo.keywords }">
 														</div>
 													</div>
 												</div>
@@ -220,7 +215,7 @@
 														<label class="col-sm-3 control-label no-padding-right" for="form-field-1">发布时间</label>
 				
 														<div class="col-sm-9">
-															<input type="text" id="form-field-1" placeholder="yyyy-mm-dd" class="form-control" disabled="disabled">
+															<input type="text" id="form-field-1" placeholder="yyyy-mm-dd" class="form-control" disabled="disabled" value="${basicinfo.createtime }">
 														</div>
 													</div>
 												</div>
@@ -229,7 +224,7 @@
 														<label class="col-sm-3 control-label no-padding-right" for="form-field-1">列表图片</label>
 				
 														<div class="col-sm-9">
-															<input type="file" id="form-field-1" disabled="disabled">
+															<input type="file" id="form-field-1" disabled="disabled" value="${basicinfo.imgurl }">
 														</div>
 													</div>
 												</div>

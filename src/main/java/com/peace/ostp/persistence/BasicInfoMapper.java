@@ -12,6 +12,7 @@ public interface BasicInfoMapper {
     int insertSelective(BasicInfo record);
 
     BasicInfo selectByPrimaryKey(String infoId);
+    
     List<BasicInfo> selectAll();
 
     int updateByPrimaryKeySelective(BasicInfo record);

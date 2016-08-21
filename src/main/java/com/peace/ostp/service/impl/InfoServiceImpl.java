@@ -52,4 +52,20 @@ public class InfoServiceImpl implements IBasicInfo {
 		return basicInfoLists;
 	}
 
+	@Override
+	public BasicInfo selectBasicInfo(String basicinfoId) {
+		// TODO Auto-generated method stub
+		BasicInfo basicInfo =null;
+		try {
+			basicInfo = basicInfoMapper.selectByPrimaryKey(basicinfoId);
+		} catch (Exception e) {
+			if (e.getClass().getName().equals("org.springframework.dao.DuplicateKeyException"))
+				throw new RuntimeException("duplicate-username");
+			else
+				throw new RuntimeException(e.getMessage());
+		}
+		return basicInfo;
+	}
+
+
 }

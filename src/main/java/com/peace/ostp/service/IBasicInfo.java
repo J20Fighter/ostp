@@ -12,6 +12,7 @@ public interface IBasicInfo {
 	
 	void deleteInfo(int infoid);
 	
+	BasicInfo selectBasicInfo(String basicinfoId);
 	
 	List<BasicInfo> getAll(Page<BasicInfo> page);
 }
