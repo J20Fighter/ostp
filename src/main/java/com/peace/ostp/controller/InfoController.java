@@ -45,5 +45,10 @@ public class InfoController {
 		infoService.addInfo(basicInfo);
 		return "admin/Sports/zixun/Zixun";
 	}
-	
+	@RequestMapping("/info_search")
+	public String searchInfo(BasicInfo basicInfo) {
+		basicInfo.setInfoId(String.valueOf(Math.random()));//随进生产咨询ID
+//		infoService.getBasicInfo(basicInfo);
+		return "admin/Sports/zixun/Zixun";
+	}
 }

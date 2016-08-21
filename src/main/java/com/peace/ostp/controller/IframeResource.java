@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.peace.ostp.domain.BasicInfo;
 import com.peace.ostp.domain.Message;
 import com.peace.ostp.domain.User;
+import com.peace.ostp.service.IBasicInfo;
 import com.peace.ostp.service.IUser;
 import com.peace.ostp.util.Page;
 import com.peace.ostp.util.PagingUtil;
@@ -28,6 +30,10 @@ public class IframeResource {
 
 	public static final String SUCCESS_MESSAGE = "success";
 	public static final String ERROR_MESSAGE = "failed";
+	
+	@Autowired
+	private IBasicInfo basicInfoService;
+	
 
 	/**
 	 * 资源访问 welcome界面
@@ -117,6 +123,16 @@ public class IframeResource {
 	}
 	@RequestMapping(value = "/zixun", method = RequestMethod.GET)
 	public String ZixunGet(Model model, HttpServletRequest request) {
+		int index = 1;
+		if (request.getParameter("page") != null)
+			index = Integer.parseInt(request.getParameter("page"));
+		Page<BasicInfo> page = new Page<BasicInfo>();
+		page.setPageNo(index);
+		page.setPageSize(20);
+		List<BasicInfo> basicInfoLists = basicInfoService.getAll(page);
+		String pageStr = PagingUtil.getPagelink(index, page.getTotalPage(), "", "admin/Sports/zixun/Zixun");
+		model.addAttribute("basicInfoLists", basicInfoLists);
+		model.addAttribute("pageStr", pageStr);
 		return "admin/Sports/zixun/Zixun";
 	}
 	

@@ -25,6 +25,11 @@
     from basicinfo
     where InfoID = #{infoId,jdbcType=CHAR}
   </select>
+  <select id="selectAll" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from basicinfo
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from basicinfo
     where InfoID = #{infoId,jdbcType=CHAR}

@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.peace.ostp.domain.BasicInfo;
+import com.peace.ostp.domain.User;
 import com.peace.ostp.persistence.BasicInfoMapper;
 import com.peace.ostp.service.IBasicInfo;
+import com.peace.ostp.util.Page;
 
 @Service
 public class InfoServiceImpl implements IBasicInfo {
-	
+
 	@Autowired
 	public BasicInfoMapper basicInfoMapper;
 
@@ -20,11 +22,11 @@ public class InfoServiceImpl implements IBasicInfo {
 		// TODO Auto-generated method stub
 		try {
 			basicInfoMapper.insert(basicInfo);
-			
+
 		} catch (Exception e) {
-			if(e.getClass().getName().equals("org.springframework.dao.DuplicateKeyException"))
+			if (e.getClass().getName().equals("org.springframework.dao.DuplicateKeyException"))
 				throw new RuntimeException("duplicate-username");
-			else 
+			else
 				throw new RuntimeException(e.getMessage());
 		}
 	}
@@ -32,13 +34,22 @@ public class InfoServiceImpl implements IBasicInfo {
 	@Override
 	public void deleteInfo(int infoid) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public List<BasicInfo> getAll() {
+	public List<BasicInfo> getAll(Page<BasicInfo> page) {
 		// TODO Auto-generated method stub
-		return null;
+		List<BasicInfo> basicInfoLists =null;
+		try {
+			 basicInfoLists = basicInfoMapper.selectAll();
+		} catch (Exception e) {
+			if (e.getClass().getName().equals("org.springframework.dao.DuplicateKeyException"))
+				throw new RuntimeException("duplicate-username");
+			else
+				throw new RuntimeException(e.getMessage());
+		}
+		return basicInfoLists;
 	}
 
 }

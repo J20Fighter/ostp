@@ -1,7 +1,18 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
+    	<base href="<%=basePath%>">
 		<meta charset="utf-8" />
 		<title>资讯</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -99,7 +110,7 @@
 	
 										<div class="row">
 											<div class="col-xs-12">
-												<form class="clearfix form-actions">
+												<form action="info_search" class="clearfix form-actions">
 													<div class="row">
 														<div class="col-sm-4">
 															<div class="form-group">
@@ -168,17 +179,17 @@
 																<div class="col-sm-8" id="second_select">
 																	<!--<input type="text" id="form-field-1" placeholder="Username" class="form-control">-->
 																	<select class="form-control">
-																		<option>户外常识</option>
-																		<option>安全知识</option>
-																		<option>户外公开课</option>
-																		<option>领队培训</option>
+																		<option value="1">户外常识</option>
+																		<option value="2">安全知识</option>
+																		<option value="3">户外公开课</option>
+																		<option value="4">领队培训</option>
 																	</select>
 																	
 																	<select class="form-control hide_select">
-																		<option>新品报道</option>
-																		<option>装备评测</option>
-																		<option>装备品牌</option>
-																		<option>装备行情</option>
+																		<option value="1">新品报道</option>
+																		<option value="2">装备评测</option>
+																		<option value="3">装备品牌</option>
+																		<option value="4">装备行情</option>
 																	</select>
 																	
 																	<select class="form-control hide_select">
@@ -186,16 +197,16 @@
 																	</select>
 																	
 																	<select class="form-control hide_select">
-																		<option>国内新闻</option>
-																		<option>国外新闻</option>
-																		<option>小道消息</option>
-																		<option>关注热点</option>
+																		<option value="1">国内新闻</option>
+																		<option value="2">国外新闻</option>
+																		<option value="3">小道消息</option>
+																		<option value="4">关注热点</option>
 																	</select>
 																	
 																	<select class="form-control hide_select">
-																		<option>达人专访</option>
-																		<option>品牌专访</option>
-																		<option>极限挑战</option>
+																		<option value="1">达人专访</option>
+																		<option value="2">品牌专访</option>
+																		<option value="3">极限挑战</option>
 																	</select>
 																	
 																</div>
@@ -233,7 +244,7 @@
 													<div class="row">
 														<div class="form-actions">
 															<div class="col-sm-offset-5 col-md-3">
-																<button class="btn btn-primary" type="button">
+																<button class="btn btn-primary" type="submit">
 																	<i class="icon-ok bigger-110"></i>
 																	查询
 																</button>
@@ -292,8 +303,9 @@
 		
 															</tr>
 														</thead>
-		
+					
 														<tbody>
+														<c:forEach items="${basicInfoLists}" var="item" varStatus="status">
 															<tr id="zixun_tr">
 																<td class="center">
 																	<label>
@@ -303,21 +315,21 @@
 																</td>
 		
 																<td>
-																	<a href="#">1001</a>
+																	<a href="#">${status.index + 1}</a>
 																</td>
 																<td>
-																	<a href="#">徒步出游须知的6点小知识</a>
+																	<a href="#">${item.title}</a>
 																</td>
 																<td>
-																	<a href="#">户外安全知识类</a>
+																	<a href="#">${item.sporttypeid}</a>
 																</td>
-																<td>206</td>
+																<td>${item.firstlevelinfotypeid}</td>
 																<td>
-																	<a href="#">已生成</a>
+																	<a href="#">${item.secondlevelinfotypeid}</a>
 																</td>
-																<td>开放浏览</td>
-																<td class="hidden-480">小波</td>
-																<td>2016-08-03</td>
+																<td>${item.copyfrom}</td>
+																<td class="hidden-480">${item.keywords}</td>
+																<td>${item.createtime}</td>
 																<td>
 																	<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
 																		
@@ -342,7 +354,7 @@
 		
 																			<ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
 																				<li>
-																					<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+																					<a href="zixun_view?InfoID=${infoid}" class="tooltip-info" data-rel="tooltip" title="View">
 																						<span class="blue">
 																							<i class="icon-zoom-in bigger-120"></i>
 																						</span>
@@ -350,7 +362,7 @@
 																				</li>
 		
 																				<li>
-																					<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+																					<a href="zixun_edit?InfoID=${infoid}" class="tooltip-success" data-rel="tooltip" title="Edit">
 																						<span class="green">
 																							<i class="icon-edit bigger-120"></i>
 																						</span>
@@ -379,6 +391,7 @@
 																	});
 																})();
 															</script>
+															</c:forEach>
 														</tbody>
 													</table>
 												</div>

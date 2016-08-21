@@ -3,6 +3,8 @@ package com.peace.ostp.service;
 import java.util.List;
 
 import com.peace.ostp.domain.BasicInfo;
+import com.peace.ostp.domain.User;
+import com.peace.ostp.util.Page;
 
 public interface IBasicInfo {
 
@@ -10,5 +12,6 @@ public interface IBasicInfo {
 	
 	void deleteInfo(int infoid);
 	
-	List<BasicInfo> getAll();
+	
+	List<BasicInfo> getAll(Page<BasicInfo> page);
 }
